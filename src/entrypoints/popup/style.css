@@ -38,6 +38,7 @@
 body {
   margin: 0;
   width: 340px;
+  min-width: 300px;
   background: var(--bg);
   color: var(--text);
 }
@@ -107,6 +108,21 @@ button:disabled {
 legend {
   font-size: 12px;
   color: var(--muted);
+}
+
+/* Standalone window: follow the window size instead of the fixed popup width. */
+.floating body {
+  width: auto;
+}
+
+.currency-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px;
+}
+
+.icon svg {
+  display: block;
 }
 
 .date-row {

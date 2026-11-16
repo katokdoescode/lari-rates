@@ -46,6 +46,7 @@ Lari Rates puts the official exchange rates of the National Bank of Georgia one 
 • Two-way converter — currency to lari or lari to currency. Understands "1 000,50" and "1000.50".
 • Honest dates — on weekends and holidays the bank sets no rate; the extension shows the rate in force and the day it is valid from.
 • Fast — past rates are cached on your device and open instantly.
+• Floating window — keep the rates open in a separate window while you switch tabs.
 • Keyboard shortcut — Alt+Shift+L.
 • English, Russian and Georgian interface, light and dark themes.
 
@@ -67,6 +68,7 @@ Lari Rates — официальные курсы Национального ба
 • Конвертер в обе стороны — из валюты в лари и обратно. Понимает «1 000,50» и «1000.50».
 • Честные даты — в выходные и праздники банк курс не устанавливает; плагин покажет действовавший курс и день, с которого он действует.
 • Быстро — курсы за прошедшие дни хранятся на устройстве и открываются мгновенно.
+• Плавающее окно — курсы остаются открытыми в отдельном окне, пока вы переключаете вкладки.
 • Горячая клавиша — Alt+Shift+L.
 • Интерфейс на английском, русском и грузинском, светлая и тёмная тема.
 

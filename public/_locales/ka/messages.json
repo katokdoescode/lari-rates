@@ -67,5 +67,11 @@
   },
   "source": {
     "message": "წყარო: nbg.gov.ge"
+  },
+  "detach": {
+    "message": "ცალკე ფანჯარაში გახსნა"
+  },
+  "detachFailed": {
+    "message": "ფანჯრის გახსნა ვერ მოხერხდა"
   }
 }

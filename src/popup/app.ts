@@ -30,6 +30,8 @@ export interface AppDeps {
   today: () => string;
   /** BCP 47 UI locale, used for dates and currency names. */
   locale?: string;
+  /** Move the popup into its own window. Omit where that is unavailable or already done. */
+  detach?: () => Promise<void>;
 }
 
 /** Wire the popup markup found in `root` to the given dependencies. */
@@ -222,6 +224,13 @@ export async function mountApp(root: ParentNode, deps: AppDeps): Promise<void> {
   });
   el('copy-amount').addEventListener('click', () => void copy(amountInput.value.trim()));
   el('copy-gel').addEventListener('click', () => void copy(gelInput.value.trim()));
+
+  if (deps.detach) {
+    const { detach } = deps;
+    const button = el<HTMLButtonElement>('detach');
+    button.hidden = false;
+    button.addEventListener('click', () => void detach().catch(() => showToast(t('detachFailed'))));
+  }
 
   await setDate(deps.today());
 }

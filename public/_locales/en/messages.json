@@ -67,5 +67,11 @@
   },
   "source": {
     "message": "Source: nbg.gov.ge"
+  },
+  "detach": {
+    "message": "Keep open in a separate window"
+  },
+  "detachFailed": {
+    "message": "Could not open the window"
   }
 }

@@ -338,6 +338,30 @@ describe('copying', () => {
   });
 });
 
+describe('floating window', () => {
+  it('hides the button when detaching is unavailable', async () => {
+    await mount();
+    expect($('detach').hidden).toBe(true);
+  });
+
+  it('shows the button and detaches on click', async () => {
+    const detach = vi.fn(async () => {});
+    await mount({ detach });
+
+    expect($('detach').hidden).toBe(false);
+    expect($('detach').getAttribute('aria-label')).toBe(english.detach.message);
+    await click('detach');
+    expect(detach).toHaveBeenCalledTimes(1);
+  });
+
+  it('reports a failure to open the window', async () => {
+    await mount({ detach: async () => Promise.reject(new Error('blocked')) });
+    await click('detach');
+
+    expect(text('toast')).toBe(english.detachFailed.message);
+  });
+});
+
 describe('markup contract', () => {
   it('fails loudly when an element is missing', async () => {
     $('toast').remove();

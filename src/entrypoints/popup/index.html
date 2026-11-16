@@ -8,10 +8,24 @@
   <body>
     <main id="app">
       <section class="controls">
-        <label class="field">
-          <span data-i18n="currency">Currency</span>
-          <select id="currency"></select>
-        </label>
+        <div class="field">
+          <label for="currency" data-i18n="currency">Currency</label>
+          <div class="currency-row">
+            <select id="currency"></select>
+            <button type="button" id="detach" class="icon" data-i18n-label="detach" hidden>
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <path
+                  d="M9 2h5v5M14 2 8 8M6 3H3v10h10v-3"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
         <div class="field">
           <label for="date" data-i18n="date">Date</label>
           <div class="date-row">
