@@ -19,15 +19,15 @@
    pnpm zip:all
    ```
 
-   | File in `.output/` | For |
-   | --- | --- |
-   | `lari-rates-<version>-chrome.zip` | Chrome Web Store, Edge Add-ons, Opera |
-   | `lari-rates-<version>-firefox.zip` | Firefox Add-ons (AMO) |
+   | File in `.output/`                 | For                                                       |
+   | ---------------------------------- | --------------------------------------------------------- |
+   | `lari-rates-<version>-chrome.zip`  | Chrome Web Store, Edge Add-ons, Opera                     |
+   | `lari-rates-<version>-firefox.zip` | Firefox Add-ons (AMO)                                     |
    | `lari-rates-<version>-sources.zip` | Source code upload that AMO asks for when code is bundled |
 
 ## Firefox Add-ons (AMO)
 
-1. Sign in at <https://addons.mozilla.org/developers/> and choose *Submit a New Add-on*.
+1. Sign in at <https://addons.mozilla.org/developers/> and choose _Submit a New Add-on_.
 2. Upload the `-firefox.zip`. When asked whether the code is minified or bundled, answer yes and
    upload the `-sources.zip`. Build instructions for the reviewer: `pnpm install && pnpm zip:firefox`
    with Node 22 and pnpm 11.
@@ -38,23 +38,24 @@
    [PRIVACY.md](../PRIVACY.md).
 
 For a signed build that is not listed publicly (to install permanently on your own machines),
-choose *On your own* as the distribution channel; AMO returns a signed `.xpi`.
+choose _On your own_ as the distribution channel; AMO returns a signed `.xpi`.
 
 ## Chrome Web Store
 
 1. Register at the [developer dashboard](https://chrome.google.com/webstore/devconsole)
    (one-time fee).
-2. *New item* → upload the `-chrome.zip`.
+2. _New item_ → upload the `-chrome.zip`.
 3. Justifications the form asks for:
    - **storage** — remembers the last currency and amount, caches rates locally.
    - **host permission `nbg.gov.ge`** — reads the National Bank of Georgia's public rates API,
      which does not allow cross-origin requests.
    - **Remote code** — none.
    - **Data usage** — no user data collected.
-4. Link `PRIVACY.md` as the privacy policy and use the images from `docs/screenshots/`
-   (the store wants 1280×800 or 640×400 — place the popup screenshot on a canvas of that size).
+4. Link `PRIVACY.md` as the privacy policy and upload the images from `store/`
+   (see [store/README.md](../store/README.md) for the listing texts and the list of files).
 
-Edge Add-ons and Opera accept the same zip.
+Edge Add-ons and Opera take their own zips (`-edge.zip`, `-opera.zip`); the code is the same as
+the Chrome build.
 
 ## Automating later
 

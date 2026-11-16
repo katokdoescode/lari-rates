@@ -15,7 +15,7 @@ Lari Rates collects nothing.
 
 ## Permissions
 
-| Permission | Why |
-| --- | --- |
-| `storage` | Remember the last currency/amount and cache rates |
+| Permission             | Why                                                                       |
+| ---------------------- | ------------------------------------------------------------------------- |
+| `storage`              | Remember the last currency/amount and cache rates                         |
 | `https://nbg.gov.ge/*` | Read the bank's API, which does not allow cross-origin requests otherwise |

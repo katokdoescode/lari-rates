@@ -51,10 +51,10 @@ Both feeds carry the same data. JSON needs no XML parser and has numeric `rate`,
 `createRatesCache` stores snapshots under the **requested** day in `storage.local`
 (key `ratesCache`).
 
-| Requested day | Lifetime | Why |
-| --- | --- | --- |
-| today or earlier | until evicted | a published rate never changes |
-| in the future | 10 minutes | the API answers with the latest known rate, which the bank replaces around 17:00 Tbilisi time |
+| Requested day    | Lifetime      | Why                                                                                           |
+| ---------------- | ------------- | --------------------------------------------------------------------------------------------- |
+| today or earlier | until evicted | a published rate never changes                                                                |
+| in the future    | 10 minutes    | the API answers with the latest known rate, which the bank replaces around 17:00 Tbilisi time |
 
 At most 60 days are kept; the oldest saved entries are dropped first. "No data" answers and
 errors are never cached. Storage failures are swallowed — a broken cache only costs a request.
@@ -105,15 +105,15 @@ API's English name is the fallback.
 
 ## Module reference
 
-| Module | Exports | Notes |
-| --- | --- | --- |
-| `lib/nbg.ts` | `buildRatesUrl`, `parseRatesResponse`, `fetchRates`, `NbgError` | Validates every field it uses; `NbgError.kind` is `network`, `http` or `format` |
-| `lib/cache.ts` | `createRatesCache`, `createRatesLoader` | Cache-first loader with the rules above |
-| `lib/dates.ts` | `isIsoDate`, `todayInTbilisi`, `shiftDate`, `formatDisplayDate` | Pure functions |
-| `lib/format.ts` | `formatRate`, `formatAmount`, `convert`, `parseAmount`, `trendOf`, `formatDiff`, `rateLine` | Pure functions |
-| `lib/settings.ts` | `loadSettings`, `saveSettings` | Validates what it reads; falls back to USD / 100 |
-| `lib/browser-store.ts` | `browserStore` | `KeyValueStore` over `browser.storage.local` |
-| `popup/app.ts` | `mountApp`, `AppDeps`, `POPULAR_CURRENCIES` | All popup behaviour |
+| Module                 | Exports                                                                                     | Notes                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `lib/nbg.ts`           | `buildRatesUrl`, `parseRatesResponse`, `fetchRates`, `NbgError`                             | Validates every field it uses; `NbgError.kind` is `network`, `http` or `format` |
+| `lib/cache.ts`         | `createRatesCache`, `createRatesLoader`                                                     | Cache-first loader with the rules above                                         |
+| `lib/dates.ts`         | `isIsoDate`, `todayInTbilisi`, `shiftDate`, `formatDisplayDate`                             | Pure functions                                                                  |
+| `lib/format.ts`        | `formatRate`, `formatAmount`, `convert`, `parseAmount`, `trendOf`, `formatDiff`, `rateLine` | Pure functions                                                                  |
+| `lib/settings.ts`      | `loadSettings`, `saveSettings`                                                              | Validates what it reads; falls back to USD / 100                                |
+| `lib/browser-store.ts` | `browserStore`                                                                              | `KeyValueStore` over `browser.storage.local`                                    |
+| `popup/app.ts`         | `mountApp`, `AppDeps`, `POPULAR_CURRENCIES`                                                 | All popup behaviour                                                             |
 
 ## Storage schema
 

@@ -10,11 +10,11 @@ GET https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/{lang}/json/
 GET https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/{lang}/rss/
 ```
 
-| Parameter | Example | Meaning |
-| --- | --- | --- |
-| `{lang}` | `en` | Language of currency names. `en` works and is what the extension uses; `ru` answers `422`; `ka` answered `200` with an empty list in our check |
-| `date` | `2026-10-22` | Day the rate should be valid on. Optional — defaults to the latest rate |
-| `currencies` | `EUR` or `EUR,USD` | Filter. Optional — defaults to all currencies |
+| Parameter    | Example            | Meaning                                                                                                                                        |
+| ------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{lang}`     | `en`               | Language of currency names. `en` works and is what the extension uses; `ru` answers `422`; `ka` answered `200` with an empty list in our check |
+| `date`       | `2026-10-22`       | Day the rate should be valid on. Optional — defaults to the latest rate                                                                        |
+| `currencies` | `EUR` or `EUR,USD` | Filter. Optional — defaults to all currencies                                                                                                  |
 
 The extension uses `/en/json/?date=…` without a currency filter.
 
@@ -41,19 +41,19 @@ The extension uses `/en/json/?date=…` without a currency filter.
 ]
 ```
 
-| Field | Meaning |
-| --- | --- |
-| top-level `date` | Day the rates are valid **from** (same as `validFromDate`) |
-| `quantity` | Units the rate is quoted for: `1`, `10`, `100` or `1000` |
-| `rate` | GEL for `quantity` units |
-| `diff` | Signed change since the previous rate |
-| `diffFormated` | **Unsigned** — do not use it to tell direction |
-| inner `date` | When the rate was published (about 17:00 Tbilisi the day before) |
+| Field            | Meaning                                                          |
+| ---------------- | ---------------------------------------------------------------- |
+| top-level `date` | Day the rates are valid **from** (same as `validFromDate`)       |
+| `quantity`       | Units the rate is quoted for: `1`, `10`, `100` or `1000`         |
+| `rate`           | GEL for `quantity` units                                         |
+| `diff`           | Signed change since the previous rate                            |
+| `diffFormated`   | **Unsigned** — do not use it to tell direction                   |
+| inner `date`     | When the rate was published (about 17:00 Tbilisi the day before) |
 
 ## Behaviour worth knowing
 
 - **One official rate.** There are no buy/sell prices; the bank does not publish any.
-- **Weekends and holidays.** No error — the API returns the latest earlier rate with *its* date.
+- **Weekends and holidays.** No error — the API returns the latest earlier rate with _its_ date.
   Asking for Sunday 2026-10-25 returns `date: 2026-10-24`. Friday's publication is dated
   Saturday, so Monday also shows a Saturday date.
 - **Future days** return the latest known rate. After ~17:00 Tbilisi time that is tomorrow's.

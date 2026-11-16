@@ -8,6 +8,10 @@ export default defineConfig({
     baseIconPath: 'assets/icon.svg',
     developmentIndicator: false,
   },
+  zip: {
+    // Keep the AMO source archive to what is needed to rebuild the extension.
+    excludeSources: ['store/**', 'docs/**', 'scripts/**', 'coverage/**'],
+  },
   manifest: ({ browser, manifestVersion }) => ({
     name: '__MSG_extName__',
     description: '__MSG_extDescription__',
