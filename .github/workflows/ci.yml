@@ -31,4 +31,5 @@ jobs:
         with:
           name: extension-zips
           path: .output/*.zip
+          include-hidden-files: true # .output is a dot-directory
           if-no-files-found: error
