@@ -32,4 +32,6 @@ no runtime dependencies, no UI framework, no background scripts unless a feature
 - A new permission needs a line in [PRIVACY.md](PRIVACY.md) and a good reason.
 - Note user-visible changes in [CHANGELOG.md](CHANGELOG.md) under an `Unreleased` heading.
 
+Releases are cut by pushing a version tag — see [docs/PUBLISHING.md](docs/PUBLISHING.md).
+
 More detail: [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
