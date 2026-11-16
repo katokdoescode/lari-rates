@@ -26,12 +26,12 @@ To load a build by hand instead, run `pnpm build:all` and follow the install ste
 
 ### Debugging the popup
 
-- **Chrome:** right-click the toolbar icon → *Inspect popup*.
-- **Firefox:** `about:debugging` → *This Firefox* → *Inspect*; enable *Disable popup auto-hide*
+- **Chrome:** right-click the toolbar icon → _Inspect popup_.
+- **Firefox:** `about:debugging` → _This Firefox_ → _Inspect_; enable _Disable popup auto-hide_
   in the toolbox menu so the popup stays open.
 - The popup is an ordinary page: `chrome-extension://<id>/popup.html` or
   `moz-extension://<id>/popup.html` opens it in a tab.
-- Stored data: DevTools → *Application* / *Storage* → *Extension storage*, keys `settings` and
+- Stored data: DevTools → _Application_ / _Storage_ → _Extension storage_, keys `settings` and
   `ratesCache`. Clear `ratesCache` to force fresh requests.
 
 ## Tests
@@ -42,15 +42,15 @@ pnpm test:watch      # watch mode
 pnpm test:coverage   # coverage report in coverage/
 ```
 
-| File | Covers |
-| --- | --- |
-| `tests/nbg.test.ts` | URL building, response validation, network/HTTP/JSON errors |
-| `tests/cache.test.ts` | Cache lifetime, eviction, cache-first loader, broken storage |
-| `tests/dates.test.ts` | Date validation, Tbilisi day boundary, arithmetic, formatting |
-| `tests/format.test.ts` | Rounding, conversion, input parsing, copy text |
-| `tests/settings.test.ts` | Settings validation and the `browser.storage` adapter |
-| `tests/app.test.ts` | The popup end to end in happy-dom, using the real `index.html` |
-| `tests/locales.test.ts` | Every locale has every key, placeholders and store length limits |
+| File                     | Covers                                                           |
+| ------------------------ | ---------------------------------------------------------------- |
+| `tests/nbg.test.ts`      | URL building, response validation, network/HTTP/JSON errors      |
+| `tests/cache.test.ts`    | Cache lifetime, eviction, cache-first loader, broken storage     |
+| `tests/dates.test.ts`    | Date validation, Tbilisi day boundary, arithmetic, formatting    |
+| `tests/format.test.ts`   | Rounding, conversion, input parsing, copy text                   |
+| `tests/settings.test.ts` | Settings validation and the `browser.storage` adapter            |
+| `tests/app.test.ts`      | The popup end to end in happy-dom, using the real `index.html`   |
+| `tests/locales.test.ts`  | Every locale has every key, placeholders and store length limits |
 
 Conventions:
 
@@ -109,9 +109,9 @@ the edge, as described in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Troubleshooting
 
-| Symptom | Cause / fix |
-| --- | --- |
-| Type errors about `browser` or `@/…` imports | Run `pnpm install` or `pnpm exec wxt prepare` to regenerate `.wxt/` |
-| Popup shows "Could not load rates" in a dev build | Check the host permission was granted; in Firefox see `about:addons` → the extension → *Permissions* |
-| Rate looks a day behind | Expected on weekends, holidays and Mondays — see [NBG-API.md](NBG-API.md) |
-| Old data after changing parsing code | Clear `ratesCache` in extension storage |
+| Symptom                                           | Cause / fix                                                                                          |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Type errors about `browser` or `@/…` imports      | Run `pnpm install` or `pnpm exec wxt prepare` to regenerate `.wxt/`                                  |
+| Popup shows "Could not load rates" in a dev build | Check the host permission was granted; in Firefox see `about:addons` → the extension → _Permissions_ |
+| Rate looks a day behind                           | Expected on weekends, holidays and Mondays — see [NBG-API.md](NBG-API.md)                            |
+| Old data after changing parsing code              | Clear `ratesCache` in extension storage                                                              |

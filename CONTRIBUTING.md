@@ -7,12 +7,12 @@ no runtime dependencies, no UI framework, no background scripts unless a feature
 
 1. Create a branch from `main`:
 
-   | Prefix | For |
-   | --- | --- |
-   | `feat/` | new functionality |
-   | `fix/` | bug fixes |
-   | `docs/` | documentation only |
-   | `chore/`, `ci/`, `test/`, `refactor/` | everything else |
+   | Prefix                                | For                |
+   | ------------------------------------- | ------------------ |
+   | `feat/`                               | new functionality  |
+   | `fix/`                                | bug fixes          |
+   | `docs/`                               | documentation only |
+   | `chore/`, `ci/`, `test/`, `refactor/` | everything else    |
 
 2. Make the change **with tests**. Logic goes into `src/lib/` or `src/popup/app.ts`, where it
    can be tested without a browser.

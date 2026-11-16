@@ -8,8 +8,8 @@ Interface languages: English, Russian, Georgian.
 
 [Русская версия](README.ru.md)
 
-| Light | Dark (Russian UI) |
-| --- | --- |
+| Light                                                   | Dark (Russian UI)                                     |
+| ------------------------------------------------------- | ----------------------------------------------------- |
 | ![Popup, light theme](docs/screenshots/popup-light.png) | ![Popup, dark theme](docs/screenshots/popup-dark.png) |
 
 ## What it does
@@ -29,7 +29,7 @@ Interface languages: English, Russian, Georgian.
 - **Private.** No analytics, no accounts. The only network request goes to `nbg.gov.ge`.
   See [PRIVACY.md](PRIVACY.md).
 
-> **About "buy" and "sell" rates.** The National Bank publishes a single *official* rate per
+> **About "buy" and "sell" rates.** The National Bank publishes a single _official_ rate per
 > currency — it does not buy or sell cash, so there are no buy/sell prices in its data.
 > Those are set by commercial banks and exchange offices and are not available from this source.
 > The extension shows the official rate and its change since the previous one.
@@ -73,25 +73,25 @@ pnpm dev:firefox   # Firefox with hot reload
 pnpm check         # lint + typecheck + tests — run before every commit
 ```
 
-| Command | What it does |
-| --- | --- |
-| `pnpm dev` / `pnpm dev:firefox` | Start a browser with the extension loaded and live reload |
-| `pnpm build` / `pnpm build:firefox` / `pnpm build:all` | Production build into `.output/` |
-| `pnpm zip` / `pnpm zip:firefox` / `pnpm zip:all` | Build and pack zips for the stores |
-| `pnpm test` / `pnpm test:watch` / `pnpm test:coverage` | Run the Vitest suite |
-| `pnpm typecheck` | TypeScript, no emit |
-| `pnpm lint` / `pnpm lint:fix` | Biome lint + format check / autofix |
-| `pnpm check` | Lint, typecheck and tests together |
+| Command                                                | What it does                                              |
+| ------------------------------------------------------ | --------------------------------------------------------- |
+| `pnpm dev` / `pnpm dev:firefox`                        | Start a browser with the extension loaded and live reload |
+| `pnpm build` / `pnpm build:firefox` / `pnpm build:all` | Production build into `.output/`                          |
+| `pnpm zip` / `pnpm zip:firefox` / `pnpm zip:all`       | Build and pack zips for the stores                        |
+| `pnpm test` / `pnpm test:watch` / `pnpm test:coverage` | Run the Vitest suite                                      |
+| `pnpm typecheck`                                       | TypeScript, no emit                                       |
+| `pnpm lint` / `pnpm lint:fix`                          | Biome lint + format check / autofix                       |
+| `pnpm check`                                           | Lint, typecheck and tests together                        |
 
 ### Stack
 
-| Tool | Role |
-| --- | --- |
-| [WXT](https://wxt.dev) | Extension framework on Vite: one codebase, Manifest V2 and V3 output |
-| TypeScript (strict) | Language; no UI framework — the popup is ~250 lines of DOM code |
-| [Vitest](https://vitest.dev) + happy-dom | Unit and popup tests |
-| [Biome](https://biomejs.dev) | Linter and formatter in one binary |
-| pnpm | Package manager |
+| Tool                                     | Role                                                                 |
+| ---------------------------------------- | -------------------------------------------------------------------- |
+| [WXT](https://wxt.dev)                   | Extension framework on Vite: one codebase, Manifest V2 and V3 output |
+| TypeScript (strict)                      | Language; no UI framework — the popup is ~250 lines of DOM code      |
+| [Vitest](https://vitest.dev) + happy-dom | Unit and popup tests                                                 |
+| [Biome](https://biomejs.dev)             | Linter and formatter in one binary                                   |
+| pnpm                                     | Package manager                                                      |
 
 There are **no runtime dependencies**: the shipped extension is about 25 kB unpacked.
 
