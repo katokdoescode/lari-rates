@@ -2,28 +2,40 @@
 
 ## Cut a release
 
+Releases are automated: pushing a tag `vX.Y.Z` runs `.github/workflows/release.yml`, which
+checks the code, builds every browser package and publishes a GitHub Release.
+
 1. Make sure `main` is green: `pnpm check`.
-2. Bump `version` in `package.json` (WXT copies it into the manifest) and move the
-   `Unreleased` notes in `CHANGELOG.md` under the new version.
-3. Commit, tag and push:
+2. In `CHANGELOG.md`, add a `## [X.Y.Z] - YYYY-MM-DD` section. Its text becomes the release
+   notes; the workflow fails if the section is missing.
+3. Bump the version, commit and tag in one step, then push:
 
    ```bash
-   git commit -am "chore: release v1.1.0"
-   git tag v1.1.0
-   git push origin main --tags
+   git add CHANGELOG.md
+   npm version 1.1.0 --force -m "chore: release v%s"   # or: patch | minor | major
+   git push origin main --follow-tags
    ```
 
-4. Build the packages:
+   `npm version` writes the version to `package.json` (WXT copies it into the manifest),
+   commits it together with the staged changelog and creates the `v1.1.0` tag.
 
-   ```bash
-   pnpm zip:all
-   ```
+4. Wait for the **Release** workflow. The release page then has:
 
-   | File in `.output/`                 | For                                                       |
-   | ---------------------------------- | --------------------------------------------------------- |
-   | `lari-rates-<version>-chrome.zip`  | Chrome Web Store, Edge Add-ons, Opera                     |
-   | `lari-rates-<version>-firefox.zip` | Firefox Add-ons (AMO)                                     |
-   | `lari-rates-<version>-sources.zip` | Source code upload that AMO asks for when code is bundled |
+   | File                               | For                                                          |
+   | ---------------------------------- | ------------------------------------------------------------ |
+   | `lari-rates-<version>-chrome.zip`  | Chrome Web Store; Brave, Vivaldi and other Chromium browsers |
+   | `lari-rates-<version>-firefox.zip` | Firefox Add-ons (AMO)                                        |
+   | `lari-rates-<version>-edge.zip`    | Edge Add-ons                                                 |
+   | `lari-rates-<version>-opera.zip`   | Opera Add-ons                                                |
+   | `lari-rates-<version>-sources.zip` | Source code upload that AMO asks for when code is bundled    |
+   | `SHA256SUMS.txt`                   | Checksums of the archives                                    |
+
+Details worth knowing:
+
+- The tag must equal the `package.json` version (`v1.1.0` ↔ `1.1.0`), otherwise the workflow stops.
+- A tag with a suffix, for example `v1.1.0-beta.1`, is published as a pre-release.
+- To build the same packages locally, run `pnpm zip:all`; they land in `.output/`.
+- Uploading to the stores is still manual (below) until store API keys are configured.
 
 ## Firefox Add-ons (AMO)
 
@@ -57,8 +69,8 @@ choose _On your own_ as the distribution channel; AMO returns a signed `.xpi`.
 Edge Add-ons and Opera take their own zips (`-edge.zip`, `-opera.zip`); the code is the same as
 the Chrome build.
 
-## Automating later
+## Automating store uploads later
 
-`wxt submit` can upload to all stores from CI once API keys exist
-(`pnpm exec wxt submit init`). The CI workflow already builds and attaches both zips to every
-run, so a release job only needs the upload step.
+`wxt submit` can upload to the stores from CI once API keys exist
+(`pnpm exec wxt submit init`). Add it as a last step of `release.yml`, with the keys stored as
+repository secrets.

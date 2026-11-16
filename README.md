@@ -36,7 +36,9 @@ Interface languages: English, Russian, Georgian.
 
 ## Install
 
-The extension is not in the stores yet. Until then, install a build by hand.
+The extension is not in the stores yet. Until then, install a build by hand: download the
+archive for your browser from the
+[latest release](https://github.com/katokdoescode/lari-rates/releases/latest) or build it yourself.
 
 ### Firefox
 
@@ -62,7 +64,7 @@ Requirements: [Node.js](https://nodejs.org) 22+ and [pnpm](https://pnpm.io) 11+.
 ```bash
 pnpm install
 pnpm build:all   # .output/chrome-mv3 and .output/firefox-mv2
-pnpm zip:all     # store-ready zips in .output/
+pnpm zip:all     # zips for Chrome, Firefox, Edge and Opera in .output/
 ```
 
 ## Development
@@ -113,6 +115,8 @@ src/
 public/_locales/       en, ru, ka translations
 tests/                 Vitest suites
 docs/                  architecture, API notes, development and publishing guides
+store/                 store listing texts, screenshots and promo images
+scripts/               store image generator, release notes extractor
 ```
 
 ### Documentation
@@ -120,7 +124,8 @@ docs/                  architecture, API notes, development and publishing guide
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — how the pieces fit and why
 - [docs/NBG-API.md](docs/NBG-API.md) — the bank's API as observed, with its quirks
 - [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) — setup, testing, adding currencies/languages, debugging
-- [docs/PUBLISHING.md](docs/PUBLISHING.md) — releasing to Firefox Add-ons and the Chrome Web Store
+- [docs/PUBLISHING.md](docs/PUBLISHING.md) — automated releases and publishing to the stores
+- [store/README.md](store/README.md) — store listing texts and images
 - [CONTRIBUTING.md](CONTRIBUTING.md) — branches, commits, pull requests
 - [CHANGELOG.md](CHANGELOG.md)
 

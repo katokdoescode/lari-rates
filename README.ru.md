@@ -36,7 +36,9 @@
 
 ## Установка
 
-В магазинах расширений плагина пока нет — сборка ставится вручную.
+В магазинах расширений плагина пока нет — сборка ставится вручную. Скачайте архив для своего
+браузера со страницы
+[последнего релиза](https://github.com/katokdoescode/lari-rates/releases/latest) или соберите сами.
 
 ### Firefox
 
@@ -62,7 +64,7 @@
 ```bash
 pnpm install
 pnpm build:all   # .output/chrome-mv3 и .output/firefox-mv2
-pnpm zip:all     # zip-архивы для магазинов в .output/
+pnpm zip:all     # zip-архивы для Chrome, Firefox, Edge и Opera в .output/
 ```
 
 ## Разработка
@@ -83,7 +85,8 @@ Runtime-зависимостей нет: собранное расширение
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — как устроен плагин и почему
 - [docs/NBG-API.md](docs/NBG-API.md) — API банка и его особенности
 - [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) — настройка, тесты, добавление языков, отладка
-- [docs/PUBLISHING.md](docs/PUBLISHING.md) — публикация в Firefox Add-ons и Chrome Web Store
+- [docs/PUBLISHING.md](docs/PUBLISHING.md) — автоматические релизы и публикация в магазинах
+- [store/README.md](store/README.md) — тексты и картинки для магазинов расширений
 - [CONTRIBUTING.md](CONTRIBUTING.md) — ветки, коммиты, pull request'ы
 
 ## Отказ от ответственности
