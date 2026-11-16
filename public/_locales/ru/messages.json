@@ -1,0 +1,71 @@
+{
+  "extName": {
+    "message": "Lari Rates — курсы НБГ"
+  },
+  "extDescription": {
+    "message": "Официальные курсы валют Национального банка Грузии на любую дату: посмотреть, пересчитать и скопировать в один клик."
+  },
+  "currency": {
+    "message": "Валюта"
+  },
+  "date": {
+    "message": "Дата"
+  },
+  "today": {
+    "message": "Сегодня"
+  },
+  "prevDay": {
+    "message": "Предыдущий день"
+  },
+  "nextDay": {
+    "message": "Следующий день"
+  },
+  "popular": {
+    "message": "Популярные"
+  },
+  "allCurrencies": {
+    "message": "Все валюты"
+  },
+  "copyRate": {
+    "message": "Копировать курс"
+  },
+  "copyLine": {
+    "message": "Копировать текстом"
+  },
+  "copyValue": {
+    "message": "Копировать значение"
+  },
+  "copied": {
+    "message": "Скопировано: $1"
+  },
+  "copyFailed": {
+    "message": "Не удалось скопировать"
+  },
+  "loading": {
+    "message": "Загрузка…"
+  },
+  "errorNetwork": {
+    "message": "Не удалось загрузить курсы с nbg.gov.ge. Проверьте соединение."
+  },
+  "errorNoData": {
+    "message": "У Национального банка нет курсов на эту дату."
+  },
+  "retry": {
+    "message": "Повторить"
+  },
+  "noteEffective": {
+    "message": "На этот день курс не устанавливался — показан курс, действующий с $1"
+  },
+  "change": {
+    "message": "Изменение к предыдущему курсу"
+  },
+  "rateHint": {
+    "message": "Нажмите, чтобы скопировать"
+  },
+  "converter": {
+    "message": "Конвертер"
+  },
+  "source": {
+    "message": "Источник: nbg.gov.ge"
+  }
+}

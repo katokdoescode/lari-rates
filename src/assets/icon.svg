@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <title>Lari Rates</title>
+  <rect width="128" height="128" rx="28" fill="#0f766e"/>
+  <g fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round">
+    <!-- Lari sign: an open arc, two vertical strokes and a base line -->
+    <path d="M86 84A30 30 0 1 1 94 62"/>
+    <path d="M56 24v38M72 24v38"/>
+    <path d="M38 100h54"/>
+  </g>
+</svg>

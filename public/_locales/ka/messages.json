@@ -1,0 +1,71 @@
+{
+  "extName": {
+    "message": "Lari Rates — სებ-ის კურსები"
+  },
+  "extDescription": {
+    "message": "საქართველოს ეროვნული ბანკის ოფიციალური გაცვლითი კურსები ნებისმიერი თარიღისთვის: ნახვა, კონვერტაცია და კოპირება ერთი დაწკაპუნებით."
+  },
+  "currency": {
+    "message": "ვალუტა"
+  },
+  "date": {
+    "message": "თარიღი"
+  },
+  "today": {
+    "message": "დღეს"
+  },
+  "prevDay": {
+    "message": "წინა დღე"
+  },
+  "nextDay": {
+    "message": "შემდეგი დღე"
+  },
+  "popular": {
+    "message": "პოპულარული"
+  },
+  "allCurrencies": {
+    "message": "ყველა ვალუტა"
+  },
+  "copyRate": {
+    "message": "კურსის კოპირება"
+  },
+  "copyLine": {
+    "message": "ტექსტად კოპირება"
+  },
+  "copyValue": {
+    "message": "მნიშვნელობის კოპირება"
+  },
+  "copied": {
+    "message": "დაკოპირდა: $1"
+  },
+  "copyFailed": {
+    "message": "კოპირება ვერ მოხერხდა"
+  },
+  "loading": {
+    "message": "იტვირთება…"
+  },
+  "errorNetwork": {
+    "message": "nbg.gov.ge-დან კურსების ჩატვირთვა ვერ მოხერხდა. შეამოწმეთ კავშირი."
+  },
+  "errorNoData": {
+    "message": "ეროვნულ ბანკს ამ თარიღისთვის კურსები არ აქვს."
+  },
+  "retry": {
+    "message": "თავიდან ცდა"
+  },
+  "noteEffective": {
+    "message": "ამ დღეს ახალი კურსი არ დადგენილა — ნაჩვენებია $1-დან მოქმედი კურსი"
+  },
+  "change": {
+    "message": "ცვლილება წინა კურსთან შედარებით"
+  },
+  "rateHint": {
+    "message": "დააწკაპუნეთ დასაკოპირებლად"
+  },
+  "converter": {
+    "message": "კონვერტერი"
+  },
+  "source": {
+    "message": "წყარო: nbg.gov.ge"
+  }
+}
