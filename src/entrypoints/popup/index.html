@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lari Rates</title>
+  </head>
+  <body>
+    <main id="app">
+      <section class="controls">
+        <label class="field">
+          <span data-i18n="currency">Currency</span>
+          <select id="currency"></select>
+        </label>
+        <div class="field">
+          <label for="date" data-i18n="date">Date</label>
+          <div class="date-row">
+            <button type="button" id="prev-day" class="icon" data-i18n-label="prevDay">‹</button>
+            <input type="date" id="date" required />
+            <button type="button" id="next-day" class="icon" data-i18n-label="nextDay">›</button>
+            <button type="button" id="today" data-i18n="today">Today</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <button type="button" id="rate" class="rate" data-i18n-title="rateHint">
+          <span id="rate-quantity"></span>
+          <span class="equals">=</span>
+          <strong id="rate-value"></strong>
+          <span>GEL</span>
+        </button>
+        <p id="diff" class="diff" data-i18n-title="change"></p>
+        <p id="note" class="note" hidden></p>
+        <div class="actions">
+          <button type="button" id="copy-rate" data-i18n="copyRate">Copy rate</button>
+          <button type="button" id="copy-line" data-i18n="copyLine">Copy as text</button>
+        </div>
+
+        <fieldset class="converter">
+          <legend data-i18n="converter">Converter</legend>
+          <div class="money">
+            <label for="amount" id="amount-code">USD</label>
+            <input id="amount" inputmode="decimal" autocomplete="off" />
+            <button type="button" id="copy-amount" class="icon" data-i18n-label="copyValue">⧉</button>
+          </div>
+          <div class="money">
+            <label for="gel">GEL</label>
+            <input id="gel" inputmode="decimal" autocomplete="off" />
+            <button type="button" id="copy-gel" class="icon" data-i18n-label="copyValue">⧉</button>
+          </div>
+        </fieldset>
+      </section>
+
+      <section id="error" class="error" role="alert" hidden>
+        <p id="error-text"></p>
+        <button type="button" id="retry" data-i18n="retry">Retry</button>
+      </section>
+
+      <p id="loading" class="loading" data-i18n="loading" hidden>Loading…</p>
+
+      <footer>
+        <a id="source" href="https://nbg.gov.ge/en/monetary-policy/currency" target="_blank" rel="noreferrer" data-i18n="source">Source: nbg.gov.ge</a>
+        <span id="toast" class="toast" role="status"></span>
+      </footer>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

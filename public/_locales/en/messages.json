@@ -1,0 +1,71 @@
+{
+  "extName": {
+    "message": "Lari Rates — NBG exchange rates"
+  },
+  "extDescription": {
+    "message": "Official National Bank of Georgia exchange rates for any date: look up, convert and copy in one click."
+  },
+  "currency": {
+    "message": "Currency"
+  },
+  "date": {
+    "message": "Date"
+  },
+  "today": {
+    "message": "Today"
+  },
+  "prevDay": {
+    "message": "Previous day"
+  },
+  "nextDay": {
+    "message": "Next day"
+  },
+  "popular": {
+    "message": "Popular"
+  },
+  "allCurrencies": {
+    "message": "All currencies"
+  },
+  "copyRate": {
+    "message": "Copy rate"
+  },
+  "copyLine": {
+    "message": "Copy as text"
+  },
+  "copyValue": {
+    "message": "Copy value"
+  },
+  "copied": {
+    "message": "Copied: $1"
+  },
+  "copyFailed": {
+    "message": "Could not copy"
+  },
+  "loading": {
+    "message": "Loading…"
+  },
+  "errorNetwork": {
+    "message": "Could not load rates from nbg.gov.ge. Check your connection."
+  },
+  "errorNoData": {
+    "message": "The National Bank has no rates for this date."
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "noteEffective": {
+    "message": "No new rate was set for this day — showing the rate valid from $1"
+  },
+  "change": {
+    "message": "Change since the previous rate"
+  },
+  "rateHint": {
+    "message": "Click to copy"
+  },
+  "converter": {
+    "message": "Converter"
+  },
+  "source": {
+    "message": "Source: nbg.gov.ge"
+  }
+}

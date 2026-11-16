@@ -1,0 +1,252 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --surface: #f3f5f6;
+  --border: #d5dadd;
+  --text: #15202b;
+  --muted: #5b6770;
+  --accent: #0f766e;
+  --accent-text: #ffffff;
+  --up: #b42318;
+  --down: #067647;
+  font:
+    14px / 1.4 system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1f23;
+    --surface: #272b30;
+    --border: #3a4047;
+    --text: #e8ecef;
+    --muted: #9aa5ae;
+    --accent: #2dd4bf;
+    --accent-text: #06201d;
+    --up: #f97066;
+    --down: #47cd89;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 340px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main,
+.controls,
+.field,
+.result,
+.converter {
+  /* minmax(0, …) lets long translations shrink instead of widening the popup */
+  grid-template-columns: minmax(0, 1fr);
+}
+
+main {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+[hidden] {
+  /* biome-ignore lint/complexity/noImportantStyles: `hidden` must win over layout rules */
+  display: none !important;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  min-width: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.controls {
+  display: grid;
+  gap: 10px;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+}
+
+.field > span,
+.field > label,
+legend {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  gap: 6px;
+}
+
+.icon {
+  padding-inline: 10px;
+}
+
+.result {
+  display: grid;
+  gap: 8px;
+}
+
+.rate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 10px;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rate strong {
+  font-size: 28px;
+  color: var(--accent);
+}
+
+.diff {
+  margin: 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.diff[data-trend="up"] {
+  color: var(--up);
+}
+
+.diff[data-trend="down"] {
+  color: var(--down);
+}
+
+.note,
+.error p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.actions button {
+  padding-inline: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions button:first-child {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.converter {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 8px 10px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.money {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.money label {
+  font-weight: 600;
+}
+
+.money input {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.error {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  padding: 10px;
+  border: 1px solid var(--up);
+  border-radius: 8px;
+}
+
+.error p {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.loading {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 18px;
+  font-size: 12px;
+}
+
+footer a {
+  flex: none;
+  color: var(--muted);
+}
+
+.toast {
+  flex: 1;
+  min-width: 0;
+  color: var(--accent);
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
