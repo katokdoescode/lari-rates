@@ -67,5 +67,11 @@
   },
   "source": {
     "message": "Источник: nbg.gov.ge"
+  },
+  "detach": {
+    "message": "Открыть в отдельном окне"
+  },
+  "detachFailed": {
+    "message": "Не удалось открыть окно"
   }
 }

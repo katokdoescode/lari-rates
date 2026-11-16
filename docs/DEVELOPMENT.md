@@ -49,6 +49,7 @@ pnpm test:coverage   # coverage report in coverage/
 | `tests/dates.test.ts`    | Date validation, Tbilisi day boundary, arithmetic, formatting    |
 | `tests/format.test.ts`   | Rounding, conversion, input parsing, copy text                   |
 | `tests/settings.test.ts` | Settings validation and the `browser.storage` adapter            |
+| `tests/floating.test.ts` | Opening, re-focusing and re-creating the floating window         |
 | `tests/app.test.ts`      | The popup end to end in happy-dom, using the real `index.html`   |
 | `tests/locales.test.ts`  | Every locale has every key, placeholders and store length limits |
 

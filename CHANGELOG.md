@@ -12,6 +12,7 @@ versions follow [Semantic Versioning](https://semver.org/).
 - Day navigation (previous / next / today) and a notice when the bank returned an earlier rate.
 - Copy the rate, a text summary, or either converter value.
 - Two-way currency ↔ GEL converter that honours the quoted quantity.
+- Floating window: keep the popup open in its own window while switching tabs.
 - Local cache of rates; remembered currency and amount.
 - English, Russian and Georgian interface; light and dark themes.
 - `Alt+Shift+L` keyboard shortcut.

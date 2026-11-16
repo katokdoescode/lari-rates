@@ -24,6 +24,10 @@ Interface languages: English, Russian, Georgian.
   the popup shows the rate that was in force and says which day it is valid from.
 - **Fast and offline-friendly.** Rates for past days never change, so they are cached locally
   and open instantly.
+- **Floating window.** The `↗` button next to the currency list moves the popup into its own
+  small window. It stays open while you switch tabs, type on a page or copy several values.
+  Browsers do not let extensions pin a window above all others, so place it beside the browser
+  window if you want it always visible.
 - **Keyboard shortcut.** `Alt+Shift+L` opens the popup (change it in your browser's
   extension shortcut settings).
 - **Private.** No analytics, no accounts. The only network request goes to `nbg.gov.ge`.

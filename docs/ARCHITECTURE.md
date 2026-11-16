@@ -89,6 +89,20 @@ clicking quickly through days cannot leave an older day on screen.
   results to two decimals.
 - Input accepts spaces and a decimal comma.
 
+### Floating window
+
+A toolbar popup closes as soon as it loses focus — that is browser behaviour and cannot be
+changed. The `↗` button therefore opens the same `popup.html` in a standalone window
+(`browser.windows.create({ type: 'popup' })`) with `?floating=1` in the URL and closes the popup.
+
+- `lib/floating.ts` remembers the window id in `storage.local` (`floatingWindowId`) and focuses
+  the existing window instead of opening a second one.
+- In floating mode `main.ts` adds the `floating` class (fluid width), hides the button by not
+  passing the `detach` dependency, and keeps the window height equal to the content height with
+  a `ResizeObserver`.
+- No extra permission is needed. Extensions cannot make a window always-on-top; the window can
+  be covered by the browser window like any other.
+
 ### Manifest versions
 
 WXT builds Manifest V3 for Chromium and Manifest V2 for Firefox from the same source.
@@ -112,6 +126,7 @@ API's English name is the fallback.
 | `lib/dates.ts`         | `isIsoDate`, `todayInTbilisi`, `shiftDate`, `formatDisplayDate`                             | Pure functions                                                                  |
 | `lib/format.ts`        | `formatRate`, `formatAmount`, `convert`, `parseAmount`, `trendOf`, `formatDiff`, `rateLine` | Pure functions                                                                  |
 | `lib/settings.ts`      | `loadSettings`, `saveSettings`                                                              | Validates what it reads; falls back to USD / 100                                |
+| `lib/floating.ts`      | `openFloatingWindow`, `isFloating`                                                          | Standalone window that survives tab switches                                    |
 | `lib/browser-store.ts` | `browserStore`                                                                              | `KeyValueStore` over `browser.storage.local`                                    |
 | `popup/app.ts`         | `mountApp`, `AppDeps`, `POPULAR_CURRENCIES`                                                 | All popup behaviour                                                             |
 
@@ -121,6 +136,7 @@ API's English name is the fallback.
 // browser.storage.local
 {
   "settings": { "currency": "EUR", "amount": "100" },
+  "floatingWindowId": 123,
   "ratesCache": {
     "2026-10-22": {
       "savedAt": 1792345678901,
